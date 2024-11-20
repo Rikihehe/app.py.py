@@ -5,17 +5,14 @@
 
 
 import pandas as pd
-dftrain=pd.read_csv(r"Titanic_train.csv")
-dftrain
+dftrain=pd.read_csv("Titanic_train.csv")
 dftrain=dftrain.drop('Cabin',axis=1)
 dftrain_cleaned=dftrain.dropna()
-dftrain_cleaned
 
 # In[ ]:
 
 
 dftrain_cleaned=dftrain_cleaned.drop(['PassengerId','Name','Ticket'], axis=1)
-dftrain_cleaned
 
 # In[ ]:
 
@@ -24,7 +21,6 @@ sex_type={'male':1,'female':0}
 embarked_types={'S':2,'C':1,'Q':0}
 dftrain_cleaned['Sex'] = dftrain_cleaned['Sex'].map(sex_type)
 dftrain_cleaned['Embarked'] = dftrain_cleaned['Embarked'].map(embarked_types)
-dftrain_cleaned
 
 # In[ ]:
 
@@ -36,7 +32,6 @@ from sklearn.linear_model import LinearRegression
 x=dftrain_cleaned.drop('Survived', axis=1)
 y=dftrain_cleaned['Survived']
 x_train,x_test,y_train,y_test=tts(x,y,train_size=0.7,random_state=42)
-x_train.shape,y_train.shape,x_test.shape,y_test.shape
 
 # In[ ]:
 
