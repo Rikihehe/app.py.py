@@ -5,7 +5,7 @@
 
 
 import pandas as pd
-dftrain=pd.read_csv(r"C:\Users\polpi\Desktop\data science\assignments\done\Logistic Regression\Titanic_train.csv")
+dftrain=pd.read_csv("Titanic_train.csv")
 dftrain
 dftrain=dftrain.drop('Cabin',axis=1)
 dftrain_cleaned=dftrain.dropna()
